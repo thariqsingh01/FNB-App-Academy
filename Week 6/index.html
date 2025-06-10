@@ -13,6 +13,10 @@
 
     <script src="config.js"></script>
     <script>
+
+        document.getElementById("refresh").addEventListener("click",fetchContacts);
+        document.getElementById("addContact").addEventListener("click",addContact);
+
         function fetchContacts(){
             fetch(rootpath + "controller/get-contacts/")
             .then(function(response){
@@ -38,6 +42,10 @@
 
         output += "</table>"
         document.getElementById("table").innerHTML = output;
+
+        function addContact(){
+            window.open("add-contact.html","_self");
+        }
 
     </script>
 
